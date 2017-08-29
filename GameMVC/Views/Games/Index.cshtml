@@ -1,0 +1,26 @@
+﻿@model GameMVC.ViewModels.GamesIndexViewModel
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Games</h2>
+
+@if (@Model.Games.Count > 0)
+{
+    <table class="table table-bordered table-hover">
+        <thead>
+            <tr><th>Game</th></tr>
+        </thead>
+        <tbody>
+            @foreach (var game in Model.Games)
+            {
+                <tr><th>@game.nome<th></tr>
+            }
+        </tbody>
+    </table>
+}
+else
+{
+    <p>Ainda não temos clientes!</p>
+}

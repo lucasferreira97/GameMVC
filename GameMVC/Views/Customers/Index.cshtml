@@ -1,0 +1,27 @@
+﻿@model GameMVC.ViewModels.CustomersIndexViewModel
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Customers</h2>
+
+@if(@Model.Customers.Count > 0)
+{
+    <table class="table table-bordered table-hover">
+        <thead>
+            <tr><th>Customer</th></tr>
+        </thead>
+        <tbody>
+            @foreach (var customer in Model.Customers)
+            {
+                <tr><th>@Html.ActionLink(@customer.Name, "Details", new { customer.Id })</th></tr>
+            }
+        </tbody>
+    </table>
+}
+else
+{
+    <p>Ainda não temos clientes!</p>
+}
+
