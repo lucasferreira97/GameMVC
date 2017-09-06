@@ -167,10 +167,24 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201709060017401_InitialModel.cs" />
+    <Compile Include="Migrations\201709060017401_InitialModel.Designer.cs">
+      <DependentUpon>201709060017401_InitialModel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201709060038588_AddIsPremium.cs" />
+    <Compile Include="Migrations\201709060038588_AddIsPremium.Designer.cs">
+      <DependentUpon>201709060038588_AddIsPremium.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201709060050077_AddSignatureCustomer.cs" />
+    <Compile Include="Migrations\201709060050077_AddSignatureCustomer.Designer.cs">
+      <DependentUpon>201709060050077_AddSignatureCustomer.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\Customer.cs" />
     <Compile Include="Models\Game.cs" />
     <Compile Include="Models\IdentityModels.cs" />
+    <Compile Include="Models\SignatureCustomer.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Startup.cs" />
     <Compile Include="ViewModels\CustomersIndexViewModel.cs" />
@@ -239,6 +253,17 @@
     <Content Include="fonts\glyphicons-halflings-regular.eot" />
     <Content Include="packages.config" />
     <None Include="Project_Readme.html" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\201709060017401_InitialModel.resx">
+      <DependentUpon>201709060017401_InitialModel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201709060038588_AddIsPremium.resx">
+      <DependentUpon>201709060038588_AddIsPremium.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201709060050077_AddSignatureCustomer.resx">
+      <DependentUpon>201709060050077_AddSignatureCustomer.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
