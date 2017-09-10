@@ -1,0 +1,27 @@
+﻿@model GameMVC.ViewModels.ComputadoresIndexViewModel
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Computadores</h2>
+
+@if (Model.Computadores.Count > 0)
+{
+    <table class="table table-bordered table-hover">
+        <thead>
+            <tr><th>Computador</th><tr>
+        </thead>
+        <tbody>
+            @foreach (var computador in Model.Computadores)
+            {
+                <tr><th>@computador.Name</th></tr>
+            }
+        </tbody>
+    </table>
+}
+else
+{
+    <p>Ainda não temos Computadores!</p>
+}
+

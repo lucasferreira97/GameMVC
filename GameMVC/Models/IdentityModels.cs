@@ -22,7 +22,9 @@ namespace GameMVC.Models
     {
         public DbSet<Customer> Customers { get; set; }
         public DbSet<Game> Games { get; set; }
-        
+        public DbSet<VideoGame> VideoGames { get; set; }
+        public DbSet<Computador> Computadores { get; set; }
+
         public ApplicationDbContext()
             : base("DefaultConnection")
         {
