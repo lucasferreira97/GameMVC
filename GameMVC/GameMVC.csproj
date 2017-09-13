@@ -181,6 +181,10 @@
     <Compile Include="Migrations\201709060050077_AddSignatureCustomer.Designer.cs">
       <DependentUpon>201709060050077_AddSignatureCustomer.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201709122233487_AddComputadorAndVideoGame.cs" />
+    <Compile Include="Migrations\201709122233487_AddComputadorAndVideoGame.Designer.cs">
+      <DependentUpon>201709122233487_AddComputadorAndVideoGame.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\Computador.cs" />
@@ -271,6 +275,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201709060050077_AddSignatureCustomer.resx">
       <DependentUpon>201709060050077_AddSignatureCustomer.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201709122233487_AddComputadorAndVideoGame.resx">
+      <DependentUpon>201709122233487_AddComputadorAndVideoGame.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
