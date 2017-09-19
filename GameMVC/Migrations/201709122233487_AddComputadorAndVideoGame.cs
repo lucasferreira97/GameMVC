@@ -3,7 +3,7 @@ namespace GameMVC.Migrations
     using System;
     using System.Data.Entity.Migrations;
     
-    public partial class addComputador : DbMigration
+    public partial class addComputadorAndVideoGame : DbMigration
     {
         public override void Up()
         {
