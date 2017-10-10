@@ -173,17 +173,17 @@
     <Compile Include="Migrations\201709060017401_InitialModel.Designer.cs">
       <DependentUpon>201709060017401_InitialModel.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201709060038588_AddIsPremium.cs" />
+    <Compile Include="Migrations\201709060038588_AddIsPremium.Designer.cs">
+      <DependentUpon>201709060038588_AddIsPremium.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201709060050077_AddSignatureCustomer.cs" />
+    <Compile Include="Migrations\201709060050077_AddSignatureCustomer.Designer.cs">
+      <DependentUpon>201709060050077_AddSignatureCustomer.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\201709122233487_AddComputadorAndVideoGame.cs" />
     <Compile Include="Migrations\201709122233487_AddComputadorAndVideoGame.Designer.cs">
       <DependentUpon>201709122233487_AddComputadorAndVideoGame.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201710102237032_AddItens.cs" />
-    <Compile Include="Migrations\201710102237032_AddItens.Designer.cs">
-      <DependentUpon>201710102237032_AddItens.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201710102315480_AddNewCustomers.cs" />
-    <Compile Include="Migrations\201710102315480_AddNewCustomers.Designer.cs">
-      <DependentUpon>201710102315480_AddNewCustomers.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
@@ -192,6 +192,7 @@
     <Compile Include="Models\Customer.cs" />
     <Compile Include="Models\Game.cs" />
     <Compile Include="Models\IdentityModels.cs" />
+    <Compile Include="Models\SignatureCustomer.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Startup.cs" />
     <Compile Include="ViewModels\ComputadoresIndexViewModel.cs" />
@@ -269,14 +270,14 @@
     <EmbeddedResource Include="Migrations\201709060017401_InitialModel.resx">
       <DependentUpon>201709060017401_InitialModel.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201709060038588_AddIsPremium.resx">
+      <DependentUpon>201709060038588_AddIsPremium.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201709060050077_AddSignatureCustomer.resx">
+      <DependentUpon>201709060050077_AddSignatureCustomer.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201709122233487_AddComputadorAndVideoGame.resx">
       <DependentUpon>201709122233487_AddComputadorAndVideoGame.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201710102237032_AddItens.resx">
-      <DependentUpon>201710102237032_AddItens.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201710102315480_AddNewCustomers.resx">
-      <DependentUpon>201710102315480_AddNewCustomers.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

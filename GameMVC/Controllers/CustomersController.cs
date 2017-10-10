@@ -11,6 +11,16 @@ namespace GameMVC.Controllers
 {
     public class CustomersController : Controller
     {
+        public IEnumerable<Customer> GetCustomers()
+        {
+            return new List<Customer>{
+                
+                new Customer() {Name = "Trevor Belmont", Id = 1},
+                new Customer() {Name = "Alucard", Id = 2}
+        
+            };
+        }
+
         private ApplicationDbContext _context;
 
         public CustomersController()
@@ -32,7 +42,7 @@ namespace GameMVC.Controllers
 
         public ActionResult Details(int id)
         {
-            var customer = _context.Customers.SingleOrDefault(c=> c.Id == id);
+            var customer = GetCustomers().SingleOrDefault(c=> c.Id == id);
             
             if(customer == null)          
                 return HttpNotFound();
