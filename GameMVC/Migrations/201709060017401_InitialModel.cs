@@ -13,6 +13,7 @@ namespace GameMVC.Migrations
                     {
                         Id = c.Int(nullable: false, identity: true),
                         Name = c.String(),
+                        IsPremium = c.Boolean()
                     })
                 .PrimaryKey(t => t.Id);
             

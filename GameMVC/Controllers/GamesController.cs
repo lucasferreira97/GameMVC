@@ -11,42 +11,29 @@ namespace GameMVC.Controllers
 {
     public class GamesController : Controller
     {
-        // GET: /Games/Random
-        public ActionResult Random()
+        private ApplicationDbContext _context;
+
+        public GamesController()
         {
-            var game = new Game() { nome = "Call of Duty World War II" };
-
-            var customers = new List<Customer>
-            {
-                new Customer{Name = "Customer 1"},
-                new Customer{Name = "Customer 2"}
-            };
-
-            var viewModel = new RandomGameViewModel
-            {
-                Game = game,
-                Customers = customers
-            };
-
-            return View(viewModel);
+            _context = new ApplicationDbContext();
         }
 
+        protected override void Dispose(bool disposing)
+        {
+            _context.Dispose();
+        }
 
-
+        // GET: /Games/Index
         public ActionResult Index()
         {
-            var games = new List<Game>()
-            {
-                new Game {nome = "Call of Duty World War II" },
-                new Game {nome = "Battlefield 1"}
-            };
+            var games = _context.Games.ToList();
 
-            var viewModel = new GamesIndexViewModel
-            {
-                Games = games
-            };
+            return View(games);
+        }
 
-            return View(viewModel);
+        public ActionResult Random()
+        {
+            return View();
         }
 	}
 }

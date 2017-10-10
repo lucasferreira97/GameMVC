@@ -11,9 +11,7 @@ namespace GameMVC.Models
         public string Name { get; set; }
 
         public bool isPremium { get; set; }
-
-        public SignatureCustomer SignatureCustomer { get; set; }
-        
+ 
         public byte SignatureCustomerId { get; set; }
 
     }

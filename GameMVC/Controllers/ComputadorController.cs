@@ -10,22 +10,23 @@ namespace GameMVC.Controllers
 {
     public class ComputadorController : Controller
     {
+        private ApplicationDbContext _context;
+
+        public ComputadorController()
+        {
+            _context = new ApplicationDbContext();
+        }
+
+        protected override void Dispose(bool disposing)
+        {
+            _context.Dispose();
+        }
+
         // GET: Computador
         public ActionResult Index()
         {
-           var computadores = new List<Computador>
-            {
-                new Computador{Name = "PCNET1"},
-                new Computador{Name = "PCGAME1"}
-            };
-
-            var viewModel = new ComputadoresIndexViewModel
-            {
-                Computadores = computadores
-            };
-
-            return View(viewModel);
-            
+            var computadores = _context.Computadores.ToList();
+            return View(computadores);
         }
     }
 }
