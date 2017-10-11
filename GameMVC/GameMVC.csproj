@@ -185,6 +185,10 @@
     <Compile Include="Migrations\201709122233487_AddComputadorAndVideoGame.Designer.cs">
       <DependentUpon>201709122233487_AddComputadorAndVideoGame.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201710102350128_AddItens.cs" />
+    <Compile Include="Migrations\201710102350128_AddItens.Designer.cs">
+      <DependentUpon>201710102350128_AddItens.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\Computador.cs" />
@@ -278,6 +282,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201709122233487_AddComputadorAndVideoGame.resx">
       <DependentUpon>201709122233487_AddComputadorAndVideoGame.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201710102350128_AddItens.resx">
+      <DependentUpon>201710102350128_AddItens.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

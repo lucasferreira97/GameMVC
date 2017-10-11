@@ -1,4 +1,4 @@
-﻿@model GameMVC.ViewModels.ComputadoresIndexViewModel
+﻿@model IEnumerable<GameMVC.Models.Computador>
 @{
     ViewBag.Title = "Index";
     Layout = "~/Views/Shared/_Layout.cshtml";
@@ -6,14 +6,14 @@
 
 <h2>Computadores</h2>
 
-@if (Model.Computadores.Count > 0)
+@if (Model.Any())
 {
     <table class="table table-bordered table-hover">
         <thead>
             <tr><th>Computador</th><tr>
         </thead>
         <tbody>
-            @foreach (var computador in Model.Computadores)
+            @foreach (var computador in Model)
             {
                 <tr><th>@computador.Name</th></tr>
             }
