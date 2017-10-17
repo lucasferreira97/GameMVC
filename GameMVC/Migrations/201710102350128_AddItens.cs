@@ -18,7 +18,6 @@ namespace GameMVC.Migrations
             Sql("INSERT INTO dbo.Customers (Name, isPremium, SignatureCustomerId) VALUES ('Trevor Belmont', 1, 1)");
             Sql("INSERT INTO dbo.Customers (Name, isPremium, SignatureCustomerId) VALUES ('James Bond', 0, 2)");
 
-
         }
         
         public override void Down()

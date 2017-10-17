@@ -53,5 +53,56 @@ namespace GameMVC.Controllers
 
             return View(games);
         }
+
+        public ActionResult New()
+        {
+            var viewModel = new GamesFormViewModel
+            {
+                Game = new Game()
+            };
+
+            return View("GameForm", viewModel);
+        }
+
+        [HttpPost]
+        public ActionResult Save(Game game)
+        {
+            if (!ModelState.IsValid)
+            {
+                var viewModel = new GamesFormViewModel
+                {
+                    Game = game
+                };
+                return View("GameForm", viewModel);
+            }
+
+            if (game.Id == 0)
+            {
+                _context.Games.Add(game);
+            }
+            else
+            {
+                var gameInDb = _context.Games.Single(c => c.Id == game.Id);
+
+                gameInDb.nome = game.nome;
+            }
+            _context.SaveChanges();
+            return RedirectToAction("Index");
+        }
+
+        public ActionResult Edit(int id)
+        {
+            var game = _context.Games.SingleOrDefault(c => c.Id == id);
+
+            if (game == null)
+                return HttpNotFound();
+
+            var viewModel = new GamesFormViewModel
+            {
+                Game = game
+            };
+
+            return View("GamesForm", viewModel);
+        }
 	}
 }

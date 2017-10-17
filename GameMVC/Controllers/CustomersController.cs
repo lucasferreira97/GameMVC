@@ -2,6 +2,7 @@
 using System.Web.Mvc;
 using GameMVC.Models;
 using GameMVC.ViewModels;
+using System.Data.Entity;
 
 namespace GameMVC.Controllers
 {
@@ -22,7 +23,7 @@ namespace GameMVC.Controllers
         // GET: Customers
         public ActionResult Index()
         {
-            var customers = _context.Customers.ToList();
+            var customers = _context.Customers.Include(c => c.SignatureCustomer).ToList();
             return View(customers);
         }
 
@@ -41,6 +42,7 @@ namespace GameMVC.Controllers
             var signatureCustomer = _context.SignatureCustomer.ToList();
             var viewModel = new CustomerFormViewModel
             {
+                Customer = new Customer(),
                 SignatureCustomer = signatureCustomer
             };
 
@@ -50,6 +52,16 @@ namespace GameMVC.Controllers
         [HttpPost] 
         public ActionResult Save(Customer customer) 
         {
+            if (!ModelState.IsValid)
+            {
+                var viewModel = new CustomerFormViewModel
+                {
+                    Customer = customer,
+                    SignatureCustomer = _context.SignatureCustomer.ToList()
+                };
+                return View("CustomerForm", viewModel);
+            }
+
             if (customer.Id == 0)
             {
                  _context.Customers.Add(customer);

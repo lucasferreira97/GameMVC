@@ -1,0 +1,20 @@
+﻿@model GameMVC.ViewModels.VideoGamesFormViewModel
+@{
+    ViewBag.Title = Model.Title;
+}
+
+<h2>@ViewBag.Title</h2>
+
+@using (Html.BeginForm("Save", "Video Game"))
+{
+    @Html.HiddenFor(m => m.VideoGame.Id)
+    <div class="form-group">
+        @Html.LabelFor(m => m.VideoGame.Name)
+        @Html.TextBoxFor(m => m.VideoGame.Name, new { @class = "form-control" })
+        @Html.ValidationMessageFor(m => m.VideoGame.Name)
+    </div>
+
+    <button type="submit" class="btn btn-primary">Salvar</button>
+}
+
+

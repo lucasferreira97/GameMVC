@@ -23,7 +23,7 @@
             {
                 <tr>
                     <td>@Html.ActionLink(@customer.Name, "Edit", new { customer.Id })</td>
-                    <td>@customer.SignatureCustomer.Id</td>
+                    <td>@customer.SignatureCustomerId - @customer.SignatureCustomer.Name</td>
                 </tr>
             }
         </tbody>

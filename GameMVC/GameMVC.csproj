@@ -189,9 +189,22 @@
     <Compile Include="Migrations\201710102350128_AddItens.Designer.cs">
       <DependentUpon>201710102350128_AddItens.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201710172137345_AddBirthDateToCustomer.cs" />
+    <Compile Include="Migrations\201710172137345_AddBirthDateToCustomer.Designer.cs">
+      <DependentUpon>201710172137345_AddBirthDateToCustomer.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201710172209214_AddNameToSignatureCustomer.cs" />
+    <Compile Include="Migrations\201710172209214_AddNameToSignatureCustomer.Designer.cs">
+      <DependentUpon>201710172209214_AddNameToSignatureCustomer.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201710172252306_AddSignatureName.cs" />
+    <Compile Include="Migrations\201710172252306_AddSignatureName.Designer.cs">
+      <DependentUpon>201710172252306_AddSignatureName.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\Computador.cs" />
+    <Compile Include="Models\Min18YearsIfAMember.cs" />
     <Compile Include="Models\VideoGame.cs" />
     <Compile Include="Models\Customer.cs" />
     <Compile Include="Models\Game.cs" />
@@ -199,11 +212,14 @@
     <Compile Include="Models\SignatureCustomer.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Startup.cs" />
+    <Compile Include="ViewModels\ComputadoresFormViewModel.cs" />
     <Compile Include="ViewModels\ComputadoresIndexViewModel.cs" />
     <Compile Include="ViewModels\CustomerFormViewModel.cs" />
     <Compile Include="ViewModels\CustomersIndexViewModel.cs" />
+    <Compile Include="ViewModels\GamesFormViewModel.cs" />
     <Compile Include="ViewModels\GamesIndexViewModel.cs" />
     <Compile Include="ViewModels\RandomGameViewModel.cs" />
+    <Compile Include="ViewModels\VideoGamesFormViewModel.cs" />
     <Compile Include="ViewModels\VideoGamesIndexViewModel.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -260,7 +276,10 @@
     <Content Include="Views\Shared\_NavBar.cshtml" />
     <Content Include="Views\Computador\Index.cshtml" />
     <Content Include="Views\VideoGame\Index.cshtml" />
-    <Content Include="Views\CustomerForm.cshtml" />
+    <Content Include="Views\Customers\CustomerForm.cshtml" />
+    <Content Include="Views\Computador\ComputadorForm.cshtml" />
+    <Content Include="Views\VideoGame\VideoGameForm.cshtml" />
+    <Content Include="Views\Games\GameForm.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -287,6 +306,15 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201710102350128_AddItens.resx">
       <DependentUpon>201710102350128_AddItens.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201710172137345_AddBirthDateToCustomer.resx">
+      <DependentUpon>201710172137345_AddBirthDateToCustomer.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201710172209214_AddNameToSignatureCustomer.resx">
+      <DependentUpon>201710172209214_AddNameToSignatureCustomer.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201710172252306_AddSignatureName.resx">
+      <DependentUpon>201710172252306_AddSignatureName.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

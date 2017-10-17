@@ -28,5 +28,56 @@ namespace GameMVC.Controllers
             var videoGames = _context.VideoGames.ToList();
             return View(videoGames);
         }
+
+        public ActionResult New()
+        {
+            var viewModel = new VideoGamesFormViewModel
+            {
+                VideoGame = new VideoGame()
+            };
+
+            return View("VideoGamesForm", viewModel);
+        }
+
+        [HttpPost]
+        public ActionResult Save(VideoGame videoGame)
+        {
+            if (!ModelState.IsValid)
+            {
+                var viewModel = new VideoGamesFormViewModel
+                {
+                    VideoGame = videoGame
+                };
+                return View("VideoGamesForm", viewModel);
+            }
+
+            if (videoGame.Id == 0)
+            {
+                _context.VideoGames.Add(videoGame);
+            }
+            else
+            {
+                var videoGameInDb = _context.VideoGames.Single(c => c.Id == videoGame.Id);
+
+                videoGameInDb.Name = videoGame.Name;
+            }
+            _context.SaveChanges();
+            return RedirectToAction("Index");
+        }
+
+        public ActionResult Edit(int id)
+        {
+            var videoGame = _context.VideoGames.SingleOrDefault(c => c.Id == id);
+
+            if (videoGame == null)
+                return HttpNotFound();
+
+            var viewModel = new VideoGamesFormViewModel
+            {
+                VideoGame = videoGame
+            };
+
+            return View("VideoGamesForm", viewModel);
+        }
     }
 }

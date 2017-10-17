@@ -1,0 +1,19 @@
+﻿@model GameMVC.ViewModels.ComputadoresFormViewModel
+@{
+    ViewBag.Title = Model.Title;
+}
+
+<h2>@ViewBag.Title</h2>
+
+@using (Html.BeginForm("Save", "Computadores"))
+{
+    @Html.HiddenFor(m => m.Computador.Id)
+    <div class="form-group">
+        @Html.LabelFor(m => m.Computador.Name)
+        @Html.TextBoxFor(m => m.Computador.Name, new { @class = "form-control" })
+        @Html.ValidationMessageFor(m => m.Computador.Name)
+    </div>
+    
+    <button type="submit" class="btn btn-primary">Salvar</button>
+}
+

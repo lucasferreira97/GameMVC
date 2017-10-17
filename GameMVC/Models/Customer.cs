@@ -19,7 +19,12 @@ namespace GameMVC.Models
 
         [Display(Name = "Tipo de Assinatura")]
         public SignatureCustomer SignatureCustomer { get; set; }
+
+        [Display(Name= "Data de Nascimento")]
+        [Min18YearsIfAMember]
+        public DateTime? Birthdate { get; set; }
         
+        [Display(Name=" Tipo de Assinatura")]
         public byte SignatureCustomerId { get; set; }
 
     }
