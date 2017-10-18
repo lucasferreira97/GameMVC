@@ -8,11 +8,11 @@ using System.Web.Mvc;
 
 namespace GameMVC.Controllers
 {
-    public class ComputadorController : Controller
+    public class ComputadoresController : Controller
     {
         private ApplicationDbContext _context;
 
-        public ComputadorController()
+        public ComputadoresController()
         {
             _context = new ApplicationDbContext();
         }

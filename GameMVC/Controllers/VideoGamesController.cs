@@ -8,11 +8,11 @@ using GameMVC.ViewModels;
 
 namespace GameMVC.Controllers
 {
-    public class VideoGameController : Controller
+    public class VideoGamesController : Controller
     {
         private ApplicationDbContext _context;
 
-        public VideoGameController()
+        public VideoGamesController()
         {
             _context = new ApplicationDbContext();
         }
@@ -36,7 +36,7 @@ namespace GameMVC.Controllers
                 VideoGame = new VideoGame()
             };
 
-            return View("VideoGamesForm", viewModel);
+            return View("VideoGameForm", viewModel);
         }
 
         [HttpPost]

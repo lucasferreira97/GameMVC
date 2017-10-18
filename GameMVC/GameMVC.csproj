@@ -161,8 +161,8 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="Controllers\AccountController.cs" />
-    <Compile Include="Controllers\ComputadorController.cs" />
-    <Compile Include="Controllers\VideoGameController.cs" />
+    <Compile Include="Controllers\ComputadoresController.cs" />
+    <Compile Include="Controllers\VideoGamesController.cs" />
     <Compile Include="Controllers\CustomersController.cs" />
     <Compile Include="Controllers\GamesController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
@@ -274,11 +274,11 @@
     <Content Include="Views\Customers\Index.cshtml" />
     <Content Include="Views\Games\Index.cshtml" />
     <Content Include="Views\Shared\_NavBar.cshtml" />
-    <Content Include="Views\Computador\Index.cshtml" />
-    <Content Include="Views\VideoGame\Index.cshtml" />
+    <Content Include="Views\Computadores\Index.cshtml" />
+    <Content Include="Views\VideoGames\Index.cshtml" />
     <Content Include="Views\Customers\CustomerForm.cshtml" />
-    <Content Include="Views\Computador\ComputadorForm.cshtml" />
-    <Content Include="Views\VideoGame\VideoGameForm.cshtml" />
+    <Content Include="Views\Computadores\ComputadorForm.cshtml" />
+    <Content Include="Views\VideoGames\VideoGameForm.cshtml" />
     <Content Include="Views\Games\GameForm.cshtml" />
   </ItemGroup>
   <ItemGroup>
