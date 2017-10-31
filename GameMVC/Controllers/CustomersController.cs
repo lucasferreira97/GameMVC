@@ -49,7 +49,8 @@ namespace GameMVC.Controllers
             return View("CustomerForm", viewModel);
         }
 
-        [HttpPost] 
+        [HttpPost]
+        [ValidateAntiForgeryToken]
         public ActionResult Save(Customer customer) 
         {
             if (!ModelState.IsValid)
@@ -73,6 +74,7 @@ namespace GameMVC.Controllers
                 customerInDb.Name = customer.Name;
                 customerInDb.SignatureCustomerId = customer.SignatureCustomerId;
                 customerInDb.isPremium = customer.isPremium;
+                customerInDb.Birthdate = customer.Birthdate;
             }
             _context.SaveChanges();
             return RedirectToAction("Index");
