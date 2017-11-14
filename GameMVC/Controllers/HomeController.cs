@@ -15,14 +15,14 @@ namespace GameMVC.Controllers
 
         public ActionResult About()
         {
-            ViewBag.Message = "Your application description page.";
+            ViewBag.Message = "Uma Lan House online, aqui você pode adicionar ou remover quaisquer games, video games e computadores que quiser.";
 
             return View();
         }
 
         public ActionResult Contact()
         {
-            ViewBag.Message = "Your contact page.";
+            ViewBag.Message = "Email: lucas97.silva@catolicasc.org.br";
 
             return View();
         }

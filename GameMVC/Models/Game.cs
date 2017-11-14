@@ -12,6 +12,6 @@ namespace GameMVC.Models
         [Required]
         [StringLength(255)]
         [Display(Name = "Nome")]
-        public String nome { get; set; }
+        public String Name { get; set; }
     }
 }

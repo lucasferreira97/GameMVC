@@ -9,9 +9,9 @@
 {
     @Html.HiddenFor(m => m.Game.Id)
     <div class="form-group">
-        @Html.LabelFor(m => m.Game.nome)
-        @Html.TextBoxFor(m => m.Game.nome, new { @class = "form-control" })
-        @Html.ValidationMessageFor(m => m.Game.nome)
+        @Html.LabelFor(m => m.Game.Name)
+        @Html.TextBoxFor(m => m.Game.Name, new { @class = "form-control" })
+        @Html.ValidationMessageFor(m => m.Game.Name)
     </div>
 
     <button type="submit" class="btn btn-primary">Salvar</button>

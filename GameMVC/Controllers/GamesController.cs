@@ -4,7 +4,6 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
-using GameMVC.Models;
 using GameMVC.ViewModels;
 
 namespace GameMVC.Controllers
@@ -28,7 +27,7 @@ namespace GameMVC.Controllers
         public ActionResult Random()
         {
             
-            var game = new Game() { nome = "Call of Duty World War II" };
+            var game = new Game() { Name = "Call of Duty World War II" };
 
             var customers = new List<Customer>
             {
@@ -84,7 +83,7 @@ namespace GameMVC.Controllers
             {
                 var gameInDb = _context.Games.Single(c => c.Id == game.Id);
 
-                gameInDb.nome = game.nome;
+                gameInDb.Name = game.Name;
             }
             _context.SaveChanges();
             return RedirectToAction("Index");
@@ -103,6 +102,18 @@ namespace GameMVC.Controllers
             };
 
             return View("GamesForm", viewModel);
+        }
+
+        public ActionResult Delete(int id)
+        {
+            var game = _context.Games.SingleOrDefault(c => c.Id == id);
+
+            if (game == null)
+                return HttpNotFound();
+
+            _context.Games.Remove(game);
+
+            return new HttpStatusCodeResult(200);
         }
 	}
 }

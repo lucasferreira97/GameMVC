@@ -156,6 +156,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="App_Start\AsIsBundleOrderer.cs" />
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
@@ -201,6 +202,10 @@
     <Compile Include="Migrations\201710172252306_AddSignatureName.Designer.cs">
       <DependentUpon>201710172252306_AddSignatureName.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201711142318443_AlterarNomeCampo.cs" />
+    <Compile Include="Migrations\201711142318443_AlterarNomeCampo.Designer.cs">
+      <DependentUpon>201711142318443_AlterarNomeCampo.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\Computador.cs" />
@@ -230,6 +235,8 @@
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
+    <Content Include="Scripts\bootbox.js" />
+    <Content Include="Scripts\bootbox.min.js" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
@@ -245,6 +252,7 @@
     <Content Include="Scripts\globalize\plural.js" />
     <Content Include="Scripts\globalize\relative-time.js" />
     <Content Include="Scripts\globalize\unit.js" />
+    <Content Include="Scripts\helper.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
     <Content Include="Scripts\jquery-1.10.2.min.js" />
     <None Include="Scripts\jquery.validate-vsdoc.js" />
@@ -254,6 +262,7 @@
     <Content Include="Scripts\jquery.validate.min.js" />
     <Content Include="Scripts\jquery.validate.unobtrusive.js" />
     <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
+    <Content Include="Scripts\modelo-pt.js" />
     <Content Include="Scripts\modernizr-2.6.2.js" />
     <Content Include="Scripts\respond.js" />
     <Content Include="Scripts\respond.min.js" />
@@ -292,7 +301,7 @@
     <Content Include="Views\VideoGames\Index.cshtml" />
     <Content Include="Views\Customers\CustomerForm.cshtml" />
     <Content Include="Views\Computadores\ComputadorForm.cshtml" />
-    <Content Include="Views\VideoGames\VideoGameForm.cshtml" />
+    <Content Include="Views\VideoGames\VideoGamesForm.cshtml" />
     <Content Include="Views\Games\GameForm.cshtml" />
   </ItemGroup>
   <ItemGroup>
@@ -329,6 +338,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201710172252306_AddSignatureName.resx">
       <DependentUpon>201710172252306_AddSignatureName.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201711142318443_AlterarNomeCampo.resx">
+      <DependentUpon>201711142318443_AlterarNomeCampo.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

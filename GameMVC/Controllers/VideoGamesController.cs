@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
+using System.Net;
 using System.Web.Mvc;
 using GameMVC.Models;
 using GameMVC.ViewModels;
@@ -36,7 +37,7 @@ namespace GameMVC.Controllers
                 VideoGame = new VideoGame()
             };
 
-            return View("VideoGameForm", viewModel);
+            return View("VideoGamesForm", viewModel);
         }
 
         [HttpPost]
@@ -78,6 +79,19 @@ namespace GameMVC.Controllers
             };
 
             return View("VideoGamesForm", viewModel);
+        }
+
+        public ActionResult Delete(int id)
+        {
+            var videoGame = _context.VideoGames.SingleOrDefault(c => c.Id == id);
+
+            if (videoGame == null)
+                return HttpNotFound();
+
+            _context.VideoGames.Remove(videoGame);
+            _context.SaveChanges();
+
+            return new HttpStatusCodeResult(200);
         }
     }
 }

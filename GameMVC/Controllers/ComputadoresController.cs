@@ -82,5 +82,19 @@ namespace GameMVC.Controllers
 
             return View("ComputadorForm", viewModel);
         }
+
+        public ActionResult Delete(int id)
+        {
+            var computador = _context.Computadores.SingleOrDefault(c => c.Id == id);
+
+            if (computador == null)
+                return HttpNotFound();
+
+            _context.Computadores.Remove(computador);
+            _context.SaveChanges();
+
+
+            return new HttpStatusCodeResult(200);
+        }
     }
 }
