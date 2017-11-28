@@ -1,0 +1,31 @@
+﻿@model IEnumerable<GameMVC.Models.Customer>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Clientes</h2>
+
+@if (!Model.Any()){
+                    <p> Não temos nenhum cliente ainda.</p>
+}
+else
+{ 
+        <table id = "customers" class="table table-bordered table-hover">
+        <thead>
+        <tr>
+           <th>Cliente</th>
+           <th>Associação</th>        </tr>
+        </thead>
+        <tbody>
+            @foreach(var customer in Model)
+            {
+                <tr>
+                    <td>@customer.Name</td>
+                    <td>@customer.SignatureCustomer.Name</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+}
+

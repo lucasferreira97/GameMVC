@@ -22,37 +22,15 @@ namespace GameMVC.Controllers
             _context.Dispose();
         }
 
-        
-        // GET: /Games/Random
-        public ActionResult Random()
-        {
-            
-            var game = new Game() { Name = "Call of Duty World War II" };
-
-            var customers = new List<Customer>
-            {
-                new Customer{Name = "Customer 1"},
-                new Customer{Name = "Customer 2"}
-            };
-
-            var viewModel = new RandomGameViewModel
-            {
-                Game = game,
-                Customers = customers
-            };
-
-            return View(viewModel);
-        }
-
-
-
         public ActionResult Index()
         {
             var games = _context.Games.ToList();
-
-            return View(games);
+            if (User.IsInRole(RoleName.CanManageGames))
+                return View(games);
+            return View("ReadOnlyIndex", games);
         }
 
+        [Authorize(Roles = RoleName.CanManageGames)]
         public ActionResult New()
         {
             var viewModel = new GamesFormViewModel
@@ -64,6 +42,7 @@ namespace GameMVC.Controllers
         }
 
         [HttpPost]
+        [Authorize(Roles = RoleName.CanManageGames)]
         public ActionResult Save(Game game)
         {
             if (!ModelState.IsValid)
@@ -89,6 +68,7 @@ namespace GameMVC.Controllers
             return RedirectToAction("Index");
         }
 
+        [Authorize(Roles = RoleName.CanManageGames)]
         public ActionResult Edit(int id)
         {
             var game = _context.Games.SingleOrDefault(c => c.Id == id);
@@ -104,6 +84,7 @@ namespace GameMVC.Controllers
             return View("GamesForm", viewModel);
         }
 
+        [Authorize(Roles = RoleName.CanManageGames)]
         public ActionResult Delete(int id)
         {
             var game = _context.Games.SingleOrDefault(c => c.Id == id);

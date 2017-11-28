@@ -24,19 +24,14 @@ namespace GameMVC.Controllers
         public ActionResult Index()
         {
             var customers = _context.Customers.Include(c => c.SignatureCustomer).ToList();
-            return View(customers);
+            if (User.IsInRole(RoleName.CanManageCustomers))
+                return View(customers);
+
+            return View("ReadOnlyIndex", customers);
         }
 
-        public ActionResult Details(int id)
-        {
-            var customer = _context.Customers.SingleOrDefault(c=> c.Id == id);
-            
-            if(customer == null)          
-                return HttpNotFound();
-            
-            return View(customer);
-        }
 
+        [Authorize(Roles = RoleName.CanManageCustomers)]
         public ActionResult New()
         {
             var signatureCustomer = _context.SignatureCustomer.ToList();
@@ -51,6 +46,7 @@ namespace GameMVC.Controllers
 
         [HttpPost]
         [ValidateAntiForgeryToken]
+        [Authorize(Roles = RoleName.CanManageCustomers)]
         public ActionResult Save(Customer customer) 
         {
             if (!ModelState.IsValid)
@@ -80,6 +76,7 @@ namespace GameMVC.Controllers
             return RedirectToAction("Index");
         }
 
+        [Authorize(Roles = RoleName.CanManageCustomers)]
         public ActionResult Edit(int id)
         {
             var customer = _context.Customers.SingleOrDefault(c => c.Id == id);
@@ -96,6 +93,7 @@ namespace GameMVC.Controllers
             return View("CustomerForm", viewModel);
         }
 
+        [Authorize(Roles = RoleName.CanManageCustomers)]
         public ActionResult Delete(int id)
         {
             var customer = _context.Customers.SingleOrDefault(c => c.Id == id);

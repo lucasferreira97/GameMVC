@@ -45,10 +45,12 @@ namespace GameMVC.Controllers
         {
             if (ModelState.IsValid)
             {
-                var user = await UserManager.FindAsync(model.UserName, model.Password);
-                if (user != null)
+                
+                var user = new ApplicationUser { UserName = model.UserName,};
+                var result = await UserManager.CreateAsync(user, model.Password);
+                if (result.Succeeded)
                 {
-                    await SignInAsync(user, model.RememberMe);
+                    await SignInAsync(user, isPersistent:false);
                     return RedirectToLocal(returnUrl);
                 }
                 else
@@ -78,7 +80,7 @@ namespace GameMVC.Controllers
         {
             if (ModelState.IsValid)
             {
-                var user = new ApplicationUser() { UserName = model.UserName };
+                var user = new ApplicationUser() { UserName = model.UserName};
                 var result = await UserManager.CreateAsync(user, model.Password);
                 if (result.Succeeded)
                 {

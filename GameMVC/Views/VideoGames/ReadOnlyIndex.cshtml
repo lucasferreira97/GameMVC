@@ -1,0 +1,30 @@
+﻿@model IEnumerable<GameMVC.Models.VideoGame>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Video Game</h2>
+
+@if (!Model.Any()){
+                    <p> Não temos nenhum video game ainda.</p>
+}
+else
+{ 
+        <table id = "videogames" class="table table-bordered table-hover">
+        <thead>
+        <tr>
+           <th>Video Game</th>
+        </tr>
+        </thead>
+        <tbody>
+            @foreach(var vg in Model)
+            {
+                <tr>
+                    <td>@vg.Name</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+}
+

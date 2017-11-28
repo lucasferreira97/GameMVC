@@ -27,11 +27,14 @@ namespace GameMVC.Controllers
         public ActionResult Index()
         {
             var computadores = _context.Computadores.ToList();
+            if (User.IsInRole(RoleName.CanManageComputers))
+                return View(computadores);
 
-            return View(computadores);
+            return View("ReadOnlyIndex",computadores);
             
         }
 
+        [Authorize(Roles =RoleName.CanManageComputers)]
         public ActionResult New()
         {
             var viewModel = new ComputadoresFormViewModel
@@ -43,6 +46,7 @@ namespace GameMVC.Controllers
         }
 
         [HttpPost]
+        [Authorize(Roles = RoleName.CanManageComputers)]
         public ActionResult Save(Computador computador)
         {
             if (!ModelState.IsValid)
@@ -68,6 +72,7 @@ namespace GameMVC.Controllers
             return RedirectToAction("Index");
         }
 
+        [Authorize(Roles = RoleName.CanManageComputers)]
         public ActionResult Edit(int id)
         {
             var computador = _context.Computadores.SingleOrDefault(c => c.Id == id);
@@ -83,6 +88,7 @@ namespace GameMVC.Controllers
             return View("ComputadorForm", viewModel);
         }
 
+        [Authorize(Roles = RoleName.CanManageComputers)]
         public ActionResult Delete(int id)
         {
             var computador = _context.Computadores.SingleOrDefault(c => c.Id == id);

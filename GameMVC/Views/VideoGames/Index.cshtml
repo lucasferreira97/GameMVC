@@ -6,11 +6,14 @@
 
 <h2>VideoGames</h2>
 
+<p>
+    @Html.ActionLink("Novo Video Game", "New", null, new { @class = "btn btn-primary" })
+</p>
+
+
 @if (Model.Any())
 {
-    <p>
-        @Html.ActionLink("Novo Video Game", "New", null, new { @class = "btn btn-primary" })
-    </p>
+    
     <table id="videogames" class="table table-bordered table-hover">
         <thead>
             <tr>

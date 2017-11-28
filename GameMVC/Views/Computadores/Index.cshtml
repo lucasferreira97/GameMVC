@@ -6,12 +6,14 @@
 
 <h2>Computadores</h2>
 
+<p>
+    @Html.ActionLink("Novo Computador", "New", null, new { @class = "btn btn-primary" })
+</p>
+
 @if (Model.Count() > 0)
 {
-    <p>
-        @Html.ActionLink("Novo Computador", "New", null, new { @class = "btn btn-primary" })
-    </p>
-    <table id="computadores" class="table table-bordered table-hover">
+    
+    <table id = "computadores" class="table table-bordered table-hover">
         <thead>
             <tr>
                 <th>Computador</th>

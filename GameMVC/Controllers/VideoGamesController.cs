@@ -27,9 +27,13 @@ namespace GameMVC.Controllers
         public ActionResult Index()
         {
             var videoGames = _context.VideoGames.ToList();
-            return View(videoGames);
+            if (User.IsInRole(RoleName.CanManageVideoGames))
+                return View(videoGames);
+            
+            return View("ReadOnlyIndex",videoGames);
         }
 
+        [Authorize(Roles = RoleName.CanManageVideoGames)]
         public ActionResult New()
         {
             var viewModel = new VideoGamesFormViewModel
@@ -41,6 +45,7 @@ namespace GameMVC.Controllers
         }
 
         [HttpPost]
+        [Authorize(Roles = RoleName.CanManageVideoGames)]
         public ActionResult Save(VideoGame videoGame)
         {
             if (!ModelState.IsValid)
@@ -66,6 +71,7 @@ namespace GameMVC.Controllers
             return RedirectToAction("Index");
         }
 
+        [Authorize(Roles = RoleName.CanManageVideoGames)]
         public ActionResult Edit(int id)
         {
             var videoGame = _context.VideoGames.SingleOrDefault(c => c.Id == id);
@@ -81,6 +87,7 @@ namespace GameMVC.Controllers
             return View("VideoGamesForm", viewModel);
         }
 
+        [Authorize(Roles = RoleName.CanManageVideoGames)]
         public ActionResult Delete(int id)
         {
             var videoGame = _context.VideoGames.SingleOrDefault(c => c.Id == id);
