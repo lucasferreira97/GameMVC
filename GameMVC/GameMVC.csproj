@@ -206,6 +206,10 @@
     <Compile Include="Migrations\201711142318443_AlterarNomeCampo.Designer.cs">
       <DependentUpon>201711142318443_AlterarNomeCampo.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201712052126143_AuthUser.cs" />
+    <Compile Include="Migrations\201712052126143_AuthUser.Designer.cs">
+      <DependentUpon>201712052126143_AuthUser.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\Computador.cs" />
@@ -347,6 +351,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201711142318443_AlterarNomeCampo.resx">
       <DependentUpon>201711142318443_AlterarNomeCampo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201712052126143_AuthUser.resx">
+      <DependentUpon>201712052126143_AuthUser.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
