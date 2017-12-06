@@ -54,7 +54,7 @@ namespace GameMVC.Models
         public string Email { get; set; }
         
         [Required]
-        [Display(Name = "User name")]
+        [Display(Name = "User Name")]
         public string UserName { get; set; }
 
         [Required]

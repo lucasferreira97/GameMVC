@@ -71,7 +71,7 @@ namespace GameMVC.Controllers
         [ValidateAntiForgeryToken]
         public async Task<ActionResult> Login(GameMVC.Models.LoginViewModel model, string returnUrl)
         {
-            if (!ModelState.IsValid)
+            if (ModelState.IsValid)
             {
                 return View(model);
             }
@@ -150,11 +150,11 @@ namespace GameMVC.Controllers
         [HttpPost]
         [AllowAnonymous]
         [ValidateAntiForgeryToken]
-        public async Task<ActionResult> Register(GameMVC.ViewModels.RegisterViewModel model)
+        public async Task<ActionResult> Register(Models.RegisterViewModel model)
         {
             if (ModelState.IsValid)
             {
-                var user = new ApplicationUser { UserName = model.Email, Email = model.Email };
+                var user = GetUser(model);
                 var result = await UserManager.CreateAsync(user, model.Password);
                 if (result.Succeeded)
                 {
@@ -179,6 +179,11 @@ namespace GameMVC.Controllers
 
             // Se chegamos até aqui e houver alguma falha, exiba novamente o formulário
             return View(model);
+        }
+
+        private static ApplicationUser GetUser(Models.RegisterViewModel model)
+        {
+            return new ApplicationUser { UserName = model.Email, Email = model.Email };
         }
 
         //
