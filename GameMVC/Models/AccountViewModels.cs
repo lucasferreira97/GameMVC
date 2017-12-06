@@ -31,6 +31,10 @@ namespace GameMVC.Models
     public class LoginViewModel
     {
         [Required]
+        [Display(Name = "Email")]
+        public string Email { get; set; }
+
+        [Required]
         [Display(Name = "User name")]
         public string UserName { get; set; }
 
@@ -45,6 +49,10 @@ namespace GameMVC.Models
 
     public class RegisterViewModel
     {
+        [Required]
+        [Display(Name = "Email")]
+        public string Email { get; set; }
+        
         [Required]
         [Display(Name = "User name")]
         public string UserName { get; set; }

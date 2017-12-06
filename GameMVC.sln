@@ -1,9 +1,9 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 2013
-VisualStudioVersion = 12.0.21005.1
+# Visual Studio 15
+VisualStudioVersion = 15.0.27004.2002
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GameMVC", "GameMVC\GameMVC.csproj", "{540661E2-F5AB-4C2B-82B6-DC0E922EED63}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GameMVC", "GameMVC\GameMVC.csproj", "{CA38527F-5828-4030-A8CF-74635A64DD4B}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -11,12 +11,15 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{540661E2-F5AB-4C2B-82B6-DC0E922EED63}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{540661E2-F5AB-4C2B-82B6-DC0E922EED63}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{540661E2-F5AB-4C2B-82B6-DC0E922EED63}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{540661E2-F5AB-4C2B-82B6-DC0E922EED63}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CA38527F-5828-4030-A8CF-74635A64DD4B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CA38527F-5828-4030-A8CF-74635A64DD4B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CA38527F-5828-4030-A8CF-74635A64DD4B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CA38527F-5828-4030-A8CF-74635A64DD4B}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {BC5F255E-CFDF-47CB-A934-9357B52AD34E}
 	EndGlobalSection
 EndGlobal
